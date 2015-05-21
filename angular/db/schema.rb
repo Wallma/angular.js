@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150505191638) do
+ActiveRecord::Schema.define(version: 20150505203400) do
+
+  create_table "genders", force: :cascade do |t|
+    t.text     "name"
+    t.integer  "language_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "genders", ["language_id"], name: "index_genders_on_language_id"
 
   create_table "languages", force: :cascade do |t|
     t.text     "name"
