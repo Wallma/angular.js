@@ -1,0 +1,2 @@
+module SexualsHelper
+end

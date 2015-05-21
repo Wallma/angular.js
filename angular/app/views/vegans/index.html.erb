@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Vegans</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Language</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vegans.each do |vegan| %>
+      <tr>
+        <td><%= vegan.name %></td>
+        <td><%= vegan.language %></td>
+        <td><%= link_to 'Show', vegan %></td>
+        <td><%= link_to 'Edit', edit_vegan_path(vegan) %></td>
+        <td><%= link_to 'Destroy', vegan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vegan', new_vegan_path %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @vegan.name %>
+</p>
+
+<p>
+  <strong>Language:</strong>
+  <%= @vegan.language %>
+</p>
+
+<%= link_to 'Edit', edit_vegan_path(@vegan) %> |
+<%= link_to 'Back', vegans_path %>
