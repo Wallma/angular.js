@@ -1,0 +1,25 @@
+<%= form_for(@ee_category) do |f| %>
+  <% if @ee_category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ee_category.errors.count, "error") %> prohibited this ee_category from being saved:</h2>
+
+      <ul>
+      <% @ee_category.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ee_category_id %><br>
+    <%= f.text_field :ee_category_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_area :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

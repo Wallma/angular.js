@@ -1,4 +1,29 @@
 Rails.application.routes.draw do
+  resources :ratings
+
+  resources :products
+
+  resources :allergens
+
+  resources :nutritions
+
+  resources :ingredients
+
+  resources :certificates
+
+  resources :resellers
+
+  resources :manufacturers
+
+  resources :purchases
+
+  resources :expenses
+
+  resources :earnings
+
+  resources :ee_categories
+
+  devise_for :users
   resources :vegans
 
   resources :sexuals

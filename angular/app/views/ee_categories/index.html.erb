@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Ee Categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ee category</th>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ee_categories.each do |ee_category| %>
+      <tr>
+        <td><%= ee_category.ee_category %></td>
+        <td><%= ee_category.name %></td>
+        <td><%= link_to 'Show', ee_category %></td>
+        <td><%= link_to 'Edit', edit_ee_category_path(ee_category) %></td>
+        <td><%= link_to 'Destroy', ee_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ee category', new_ee_category_path %>

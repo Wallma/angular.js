@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @earning.user %>
+</p>
+
+<p>
+  <strong>Ee category:</strong>
+  <%= @earning.ee_category %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @earning.name %>
+</p>
+
+<p>
+  <strong>Sum:</strong>
+  <%= @earning.sum %>
+</p>
+
+<%= link_to 'Edit', edit_earning_path(@earning) %> |
+<%= link_to 'Back', earnings_path %>
