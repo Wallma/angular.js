@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html ng-app="ProductInput">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="default.css" />
+		<script type="text/javascript" src="angular.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+	</head>
+
+	<body>
+		<form>
+			<div>
+				<label for="form">Anrede</label>
+				<select ng-controller="dropdown as drop" id="form">
+					<option ng-repeat="form in drop.formlist">{{form.name}}</option>
+				</select>
+			</div>
+			<div>
+				<label for="titel">Titel</label>
+				<select ng-controller="dropdown as drop" id="titel">
+					<option ng-repeat="titel in drop.titellist">{{titel.name}}</option>
+				</select>
+			</div>
+			<div>
+				<label for="firstname">Vorname</label>
+				<input type="text" id="firstname" placeholder="">
+			</div>
+			<div>
+				<label for="lastname">Nachname</label>
+				<input type="text" id="lastname" placeholder="">
+			</div>
+			<div>
+				<label for="username">Benutzername</label>
+				<input type="text" id="username" placeholder="">
+			</div>
+			<div>
+				<label for="street">Straße</label>
+				<input type="text" id="street" placeholder="">
+			</div>
+			<div>
+				<label for="streetnumber">Hausnummer</label>
+				<input type="number" id="streetnumber" placeholder="">
+			</div>
+			<div>
+				<label for="zip">Postleitzahl</label>
+				<input type="number" id="zip" placeholder="">
+			</div>
+			<div>
+				<label for="city">Ort</label>
+				<input type="text" id="city" placeholder="">
+			</div>		
+			<div>
+				<label for="state">Bundesland</label>
+				<input type="text" id="state" placeholder="">
+			</div>			
+			<div>
+				<label for="country">Land</label>
+				<input type="text" id="country" placeholder="">
+			</div>	
+			<div>
+				<label for="gender">Geschlecht</label>
+				<input type="text" id="gender" placeholder="">
+			</div>		
+			<div>
+				<label for="birthday">Geburtstag</label>
+				<input type="date" id="birthday" placeholder="">
+			</div>			
+			<div>
+				<label for="birthcity">Geburtsort</label>
+				<input type="text" id="birthcity" placeholder="">
+			</div>			
+			<div>
+				<label for="mail">E-Mailadresse</label>
+				<input type="email" id="mail" placeholder="">
+			</div>		
+			<div>
+				<label for="phone">Telefonnummer</label>
+				<input type="tel" id="phone" placeholder="">
+			</div>			
+			<div>
+				<label for="mobile">Handynummer</label>
+				<input type="tel" id="mobile" placeholder="">
+			</div>
+			<div>
+				<label for="password">Passwort</label>
+				<input type="password" id="password" placeholder="">
+			</div>			
+			<div>
+				<label for="secpassword">Passwort wiederholen</label>
+				<input type="password" id="secpassword" placeholder="">
+			</div>					
+		</form>
+</body>
+</html>

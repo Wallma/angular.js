@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="default.css" />
+		<script type="text/javascript" src="angular.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+	</head>
+
+<body>
+    <form ng-app="ProductInput">
+        <h1>Produkteingabe</h1>
+        <div>
+            <label for="ProdName">Produktname</label>
+            <input type="text" id="ProdName" placeholder="Produktname">
+        </div>
+        <div>
+            <label for="ProdProducer">Hersteller</label>
+            <input type="text" id="ProdProducer" placeholder="Hersteller">
+        </div>
+        <div>
+            <label for="ProdVendor">Verkauf durch</label>
+            <select ng-controller="dropdown as drop" id="ProdProducer">
+                <option ng-repeat="vendor in drop.vendorlist">{{vendor.name}}</option>
+            </select>
+        </div>
+        <h2>Nährwerttabelle</h2>
+        <div>
+            <label for="ProdCalorificValue">Brennwert kJ / kcal</label>
+            <div>Output pro Einheit</div>
+        </div>
+        <div>
+            <input type="number" id="ProdCalorificValue" placeholder="Brennwert kJ / kcal">
+            <span>g</span>
+        </div>
+        <div>
+            <div>Output pro KG</div>
+        </div>
+        <div>
+            <label for="ProdFat">Fett</label>
+            <div>
+                <div>
+                    <input type="number" id="ProdFat" placeholder="Fett">
+                    <span>g</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="ProdFattyAcid">Un/gesättigte Fettsäuren</label>
+            <div>
+                <div>
+                    <input type="number" id="ProdFattyAcid" placeholder="Un/gesättigte Fettsäuren">
+                    <span>g</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+        <label for="ProdCarbohydrate">Kohlenhydrate</label>
+            <div>
+                <div>
+                    <input type="number" id="ProdCarbohydrate" placeholder="Kohlenhydrate">
+                    <span>g</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="ProdSugar">Zucker</label>
+            <div>
+                <div>
+                    <input type="number" id="ProdSugar" placeholder="Zucker">
+                    <span>g</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+        <label for="ProdFiber">Ballaststoffe</label>
+            <div>
+                <div>
+                    <input type="number" id="ProdFiber" placeholder="Ballaststoffe">
+                    <span>g</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+        <label for="ProdProtein">Eiweiß</label>
+            <div>
+                <div>
+                    <input type="number" id="ProdProtein" placeholder="Eiweiß">
+                    <span>g</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="ProdSalt">Natrium (Salz)</label>
+            <div>
+                <div>
+                    <input type="number" id="ProdSalt" placeholder="Natrium (Salz)">
+                    <span>g</span>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
