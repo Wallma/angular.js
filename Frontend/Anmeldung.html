@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html ng-app="ProductInput">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -11,8 +11,8 @@
 		<form>
 			<div>
 				<label for="form">Anrede</label>
-				<select ng-controller="dropdown as drop" id="form">
-					<option ng-repeat="form in drop.formlist">{{form.name}}</option>
+				<select ng-controller="dropdown as dropdown" id="form">
+					<option ng-repeat="form in dropdown.formlist">{{form.name}}</option>
 				</select>
 			</div>
 			<div>

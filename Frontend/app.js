@@ -4,7 +4,12 @@
   app.controller('dropdown', function(){
     this.vendorlist = vendors;
 	this.titellist = titel;
-	this.formlist = form;
+	this.formlist = [{
+		name: 'Herr'
+        },
+        {
+            name: 'Frau'
+        }];
 	});
 
 	var vendors = [{
@@ -33,10 +38,5 @@
 		name: 'Prof.'
 	}];
 	
-		var form = [{
-		name: 'Herr'
-	},
-	{
-		name: 'Frau'
-	}];
+		
 })();
