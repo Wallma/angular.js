@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="dropdownInput" ng-strict-di>
 	<head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<link rel="stylesheet" type="text/css" href="default.css" />
-		<script type="text/javascript" src="angular.min.js"></script>
-		<script type="text/javascript" src="app.js"></script>
 	</head>
 
 <body>
-    <form ng-app="ProductInput">
+    <form>
         <h1>Produkteingabe</h1>
         <div>
             <label for="ProdName">Produktname</label>
@@ -18,11 +16,10 @@
             <label for="ProdProducer">Hersteller</label>
             <input type="text" id="ProdProducer" placeholder="Hersteller">
         </div>
-        <div>
-            <label for="ProdVendor">Verkauf durch</label>
-            <select ng-controller="dropdown as drop" id="ProdProducer">
-                <option ng-repeat="vendor in drop.vendorlist">{{vendor.name}}</option>
-            </select>
+        <div ng-controller="dropdown">
+            <label for="ProdVendor">Verkauf durch
+                <select id="ProdProducer" ng-model="myVendor" ng-options="vendor.name for vendor in vendors"></select>
+            </label>
         </div>
         <h2>Nährwerttabelle</h2>
         <div>
@@ -30,7 +27,7 @@
             <div>Output pro Einheit</div>
         </div>
         <div>
-            <input type="number" id="ProdCalorificValue" placeholder="Brennwert kJ / kcal">
+            <input type="number" id="ProdCalorificValue" placeholder="Brennwert kJ / kcal" min="0" step="10" integer>
             <span>g</span>
         </div>
         <div>
@@ -40,7 +37,7 @@
             <label for="ProdFat">Fett</label>
             <div>
                 <div>
-                    <input type="number" id="ProdFat" placeholder="Fett">
+                    <input type="number" id="ProdFat" placeholder="Fett" min="0" step="10" integer>
                     <span>g</span>
                 </div>
             </div>
@@ -49,7 +46,7 @@
             <label for="ProdFattyAcid">Un/gesättigte Fettsäuren</label>
             <div>
                 <div>
-                    <input type="number" id="ProdFattyAcid" placeholder="Un/gesättigte Fettsäuren">
+                    <input type="number" id="ProdFattyAcid" placeholder="Un/gesättigte Fettsäuren" min="0" step="10" integer>
                     <span>g</span>
                 </div>
             </div>
@@ -58,7 +55,7 @@
         <label for="ProdCarbohydrate">Kohlenhydrate</label>
             <div>
                 <div>
-                    <input type="number" id="ProdCarbohydrate" placeholder="Kohlenhydrate">
+                    <input type="number" id="ProdCarbohydrate" placeholder="Kohlenhydrate" min="0" step="10" integer>
                     <span>g</span>
                 </div>
             </div>
@@ -67,7 +64,7 @@
             <label for="ProdSugar">Zucker</label>
             <div>
                 <div>
-                    <input type="number" id="ProdSugar" placeholder="Zucker">
+                    <input type="number" id="ProdSugar" placeholder="Zucker" min="0" step="10" integer>
                     <span>g</span>
                 </div>
             </div>
@@ -76,7 +73,7 @@
         <label for="ProdFiber">Ballaststoffe</label>
             <div>
                 <div>
-                    <input type="number" id="ProdFiber" placeholder="Ballaststoffe">
+                    <input type="number" id="ProdFiber" placeholder="Ballaststoffe" min="0" step="10" integer>
                     <span>g</span>
                 </div>
             </div>
@@ -85,7 +82,7 @@
         <label for="ProdProtein">Eiweiß</label>
             <div>
                 <div>
-                    <input type="number" id="ProdProtein" placeholder="Eiweiß">
+                    <input type="number" id="ProdProtein" placeholder="Eiweiß" min="0" step="10" integer>
                     <span>g</span>
                 </div>
             </div>
@@ -94,11 +91,13 @@
             <label for="ProdSalt">Natrium (Salz)</label>
             <div>
                 <div>
-                    <input type="number" id="ProdSalt" placeholder="Natrium (Salz)">
+                    <input type="number" id="ProdSalt" placeholder="Natrium (Salz)" min="0" step="10" integer>
                     <span>g</span>
                 </div>
             </div>
         </div>
     </form>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
 </body>
 </html>

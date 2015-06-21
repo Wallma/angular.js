@@ -1,26 +1,22 @@
 <!DOCTYPE html>
-<html ng-app="ProductInput">
+<html ng-app="dropdownInput" ng-strict-di>
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<link rel="stylesheet" type="text/css" href="default.css" />
-		<script type="text/javascript" src="angular.min.js"></script>
-		<script type="text/javascript" src="app.js"></script>
 	</head>
 
 	<body>
-		<form>
+		<form ng-controller="dropdown">
 			<div>
-				<label for="form">Anrede</label>
-				<select ng-controller="dropdown as dropdown" id="form">
-					<option ng-repeat="form in dropdown.formlist">{{form.name}}</option>
-				</select>
+				<label for="form">Anrede
+				    <select ng-model="myGender" id="form" ng-options="gender.name for gender in getGenders()"></select>
+                </label>
 			</div>
 			<div>
-				<label for="titel">Titel</label>
-				<select ng-controller="dropdown as drop" id="titel">
-					<option ng-repeat="titel in drop.titellist">{{titel.name}}</option>
-				</select>
-			</div>
+				<label for="titel">Titel
+				    <select ng-model="myTitel" id="titel" ng-options="titel.name for titel in titels"></select>
+                </label>
+			</div> 
 			<div>
 				<label for="firstname">Vorname</label>
 				<input type="text" id="firstname" placeholder="">
@@ -90,5 +86,7 @@
 				<input type="password" id="secpassword" placeholder="">
 			</div>					
 		</form>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
 </body>
 </html>
