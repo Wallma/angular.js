@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   resources :ee_categories
 
   devise_for :users
+    
   resources :vegans
 
   resources :sexuals

@@ -2,6 +2,19 @@
   var app = angular.module('dropdownInput', []);
 
   app.controller('dropdown', ['$scope','$http', function($scope, $http){
+      
+//       $scope.genders = [];
+//
+//    $http.get('http://192.168.1.29:3000/genders.json').
+//        success(function(data, status, headers, config) {
+//            $scope.genders = data;
+//
+//        }).
+//        error(function(data, status, headers, config) {
+//            alert('Error: Please debug in developer console');
+//        });
+//      
+//    $scope.myGender = $scope.genders[0];
   
         $scope.getGenders = function(){
             $http.get('http://192.168.178.33:3000/genders.json').
