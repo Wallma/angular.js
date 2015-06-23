@@ -5,7 +5,7 @@
       
     $scope.genders = [];
 
-    $http.get('http://192.168.1.29:3000/genders.json').
+    $http.get('http://angular.local:3000/genders.json').
         success(function(data, status, headers, config) {
             $scope.genders = data;
 
