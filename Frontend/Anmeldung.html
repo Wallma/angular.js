@@ -5,85 +5,83 @@
 		<link rel="stylesheet" type="text/css" href="default.css" />
 	</head>
 
-	<body>
-		<form ng-controller="dropdown">
-			<div>
+	<body ng-controller="input">
+		<form name="registerForm">
+			<div ng-controller="dropdown">
 				<label for="form">Anrede
 				    <select ng-model="myGender" id="form" ng-options="gender.name for gender in genders"></select>
                 </label>
 			</div>
-			<div>
+			<div ng-controller="dropdown">
 				<label for="titel">Titel
 				    <select ng-model="myTitel" id="titel" ng-options="titel.name for titel in titels"></select>
                 </label>
 			</div> 
 			<div>
-				<label for="firstname">Vorname</label>
-				<input type="text" id="firstname" placeholder="">
+				<label for="firstName">Vorname</label>
+				<input type="text" id="firstName" name="firstName" ng-model="input.firstName" ng-pattern="input.word" ng-trim="true" required>
 			</div>
 			<div>
-				<label for="lastname">Nachname</label>
-				<input type="text" id="lastname" placeholder="">
+				<label for="lastName">Nachname</label>
+				<input type="text" id="lastName" name="lastName" ng-model="input.lastName" ng-pattern="" ng-trim="true" required>
 			</div>
 			<div>
 				<label for="username">Benutzername</label>
-				<input type="text" id="username" placeholder="">
+				<input type="text" id="userName" name="userName" ng-model="input.userName" ng-pattern="" ng-trim="true" required>
 			</div>
 			<div>
-				<label for="street">Straße</label>
-				<input type="text" id="street" placeholder="">
+				<label for="streetName">Straße</label>
+				<input type="text" id="streetName" name="streetName" ng-model="input.streetName" ng-pattern="" ng-trim="true" required>
 			</div>
 			<div>
-				<label for="streetnumber">Hausnummer</label>
-				<input type="number" id="streetnumber" placeholder="">
+				<label for="streetNumber">Hausnummer</label>
+				<input type="number" id="streetNumber" name="streetNumber" ng-model="input.streetNumber" ng-pattern="" ng-trim="true" required min="0" integer>
 			</div>
 			<div>
 				<label for="zip">Postleitzahl</label>
-				<input type="number" id="zip" placeholder="">
+				<input type="number" id="zip" name="zip" ng-model="input.zip" required min="0" ng-pattern=""  ng-trim="true"integer>
 			</div>
 			<div>
-				<label for="city">Ort</label>
-				<input type="text" id="city" placeholder="">
+				<label for="cityName">Ort</label>
+				<input type="text" id="cityName" name="cityName" ng-model="input.cityName" ng-pattern="" ng-trim="true" required>
+			</div>		
+			<div ng-controller="dropdown">
+				<label for="state">Bundesland
+                    <select ng-model="myState" id="state" ng-options="state.name for state in states"></select>
+                </label>
+			</div>			
+			<div ng-controller="dropdown">
+				<label for="country">Land
+                    <select ng-model="myCountry" id="country" ng-options="country.name for country in countries"></select>
+                </label>
+            </div>
+			<div>
+				<label for="birthDay">Geburtstag</label>
+				<input type="date" id="birthDay" placeholder="dd.MM.yyyy" min="01.01.1900" name="birthDay" ng-model="input.birthDay" ng-pattern="" ng-trim="true" required>
+			</div>			
+			<div>
+				<label for="birthCity">Geburtsort</label>
+				<input type="text" id="birthCity" name="birthCity" ng-model="input.birthCity" ng-pattern="" ng-trim="true" required>
+			</div>			
+			<div>
+				<label for="mailAddress">E-Mailadresse</label>
+				<input type="email" id="mailAddress" name="mailAddress" ng-model="input.mailAddress" ng-pattern="" ng-trim="true" required>
 			</div>		
 			<div>
-				<label for="state">Bundesland</label>
-				<input type="text" id="state" placeholder="">
+				<label for="phoneNumber">Telefonnummer</label>
+				<input type="tel" id="phoneNumber" name="phoneNumber" ng-model="input.phoneNumber" ng-pattern="" ng-trim="true" required>
 			</div>			
 			<div>
-				<label for="country">Land</label>
-				<input type="text" id="country" placeholder="">
-			</div>	
-			<div>
-				<label for="gender">Geschlecht</label>
-				<input type="text" id="gender" placeholder="">
-			</div>		
-			<div>
-				<label for="birthday">Geburtstag</label>
-				<input type="date" id="birthday" placeholder="">
-			</div>			
-			<div>
-				<label for="birthcity">Geburtsort</label>
-				<input type="text" id="birthcity" placeholder="">
-			</div>			
-			<div>
-				<label for="mail">E-Mailadresse</label>
-				<input type="email" id="mail" placeholder="">
-			</div>		
-			<div>
-				<label for="phone">Telefonnummer</label>
-				<input type="tel" id="phone" placeholder="">
-			</div>			
-			<div>
-				<label for="mobile">Handynummer</label>
-				<input type="tel" id="mobile" placeholder="">
+				<label for="mobileNumber">Handynummer</label>
+				<input type="tel" id="mobileNumber" name="mobileNumber" ng-model="input.mobileNumber" ng-pattern="" ng-trim="true" required>
 			</div>
 			<div>
 				<label for="password">Passwort</label>
-				<input type="password" id="password" placeholder="">
+				<input type="password" id="password" name="password" ng-model="input.password" ng-pattern="" ng-trim="true" required>
 			</div>			
 			<div>
 				<label for="secpassword">Passwort wiederholen</label>
-				<input type="password" id="secpassword" placeholder="">
+				<input type="password" id="repassword" name="repassword" ng-model="input.repassword" ng-pattern="" ng-trim="true" required>
 			</div>					
 		</form>
     <script type="text/javascript" src="angular.min.js"></script>
