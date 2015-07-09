@@ -89,6 +89,7 @@
     app.directive('inputField', function() { 
      return {
          restrict: 'E',
+         replace: true,
          scope: {
              inputName: '@',
              identifierName: '@',
