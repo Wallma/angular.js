@@ -95,7 +95,7 @@
              typeName: '@',
              patternName: '@'
          },
-        template: '<div><label for="{{inputName}}">{{identifierName}}</label><input type="{{typeName}}" id="{{inputName}}" name="{{inputName}}" ng-model="input.{{inputName}}" ng-pattern="input.{{patternName}}" ng-trim="true" required></div>'
+        templateUrl: 'input-field.html'
             };
  
     
