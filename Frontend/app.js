@@ -84,17 +84,18 @@
                         word: /^\s*[a-zäöüÄÖÜß]*\s*$/i
                       };
         
-        $scope.fields = [
-                    {inputName: 'firstName', identifierName: 'Vorname', typeName: 'text', patternName: 'word'},
-                    {inputName: 'lastName', identifierName: 'Nachname', typeName: 'text', patternName: 'word'}               
-                    ];
-        
     }]);
     
     app.directive('inputField', function() { 
      return {
          restrict: 'E',
-        template: '<div><label for="{{field.inputName}}">{{field.identifierName}}</label><input type="{{field.typeName}}" id="{{field.inputName}}" name="{{field.inputName}}" ng-model="input.{{field.inputName}}" ng-pattern="input.{{field.patternName}}" ng-trim="true" required></div>'
+         scope: {
+             inputName: '@',
+             identifierName: '@',
+             typeName: '@',
+             patternName: '@'
+         },
+        template: '<div><label for="{{inputName}}">{{identifierName}}</label><input type="{{typeName}}" id="{{inputName}}" name="{{inputName}}" ng-model="input.{{inputName}}" ng-pattern="input.{{patternName}}" ng-trim="true" required></div>'
             };
  
     
