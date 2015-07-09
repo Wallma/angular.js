@@ -17,7 +17,8 @@
 				    <select ng-model="myTitel" id="titel" ng-options="titel.name for titel in titels"></select>
                 </label>
 			</div> 
-			<div>
+                <input-field ng-repeat="field in fields"></input-field>            
+            <div>
 				<label for="firstName">Vorname</label>
 				<input type="text" id="firstName" name="firstName" ng-model="input.firstName" ng-pattern="input.word" ng-trim="true" required>
 			</div>

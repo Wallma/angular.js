@@ -86,4 +86,36 @@
         
     }]);
     
+    app.directive('inputField', ['$scope', function($scope) {
+     return {
+            restrict: 'AE',
+            replace: 'true',
+            template: '<div><label for="{{field.inputName}}">{{field.identifierName}}</label><input type="{{field.typeName}}" id="{{field.inputName}}" name="{{field.inputName}}" ng-model="input.{{field.inputName}}" ng-pattern="input.{{field.patternName}}" ng-trim="true" required></div>',
+            link : function(scope, element, attrs) {
+                }
+            };
+ 
+    $scope.fields = [
+                    {"inputName": "firstName", "identifierName": "Vorname", "typeName": "text", "patternName": "word"},
+                    {"inputName": "lastName", "identifierName": "Nachname", "typeName": "text", "patternName": "word"}               
+                    ];
+    }]);
+    
+    
+    /* 
+    Use the ng-form directive inside of the tag in which you are using the ng-repeat directive. You can then use the scope created by the ng-form directive to reference a generic name. For example:
+
+    <div class="form-group col-sm-6" data-ng-form="subForm" data-ng-repeat="field in justificationInfo.justifications"">
+
+        <label for="{{field.label}}"><h3>{{field.label}}</h3></label>
+        <i class="icon-valid" data-ng-show="subForm.input.$dirty && subForm.input.$valid"></i>
+        <i class="icon-invalid" data-ng-show="subForm.input.$dirty && subForm.input.$invalid"></i>
+        <textarea placeholder="{{field.placeholder}}" class="form-control" id="{{field.label}}" name="input" type="text" rows="3" data-ng-model="field.value" required>{{field.value}}</textarea>
+
+    </div>
+
+    Credit to: http://www.benlesh.com/2013/03/angular-js-validating-form-elements-in.html
+    */
+    
+    
 })();
