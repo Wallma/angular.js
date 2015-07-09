@@ -8,6 +8,7 @@
 </head>
 <body>
 
+<% if user_signed_in? %>
 Admin:
 <%= link_to 'languages', '/languages' %>
 <%= link_to 'genders', '/genders' %>
@@ -26,6 +27,8 @@ Admin:
 <%= link_to 'scenes', '/scenes' %>
 <%= link_to 'sexuals', '/sexuals' %>
 <%= link_to 'vegans', '/vegans' %>
+
+<% end %>
 
 <%= yield %>
 

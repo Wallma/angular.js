@@ -65,7 +65,7 @@
       
     }]);
 
-    app.controller('input', ['$scope', function($scope){ 
+    app.controller('input', ['$scope', function($scope){
     
     $scope.register = { firstName: '', 
                         lastName: '',
@@ -84,22 +84,21 @@
                         word: /^\s*[a-zäöüÄÖÜß]*\s*$/i
                       };
         
+        $scope.fields = [
+                    {inputName: 'firstName', identifierName: 'Vorname', typeName: 'text', patternName: 'word'},
+                    {inputName: 'lastName', identifierName: 'Nachname', typeName: 'text', patternName: 'word'}               
+                    ];
+        
     }]);
     
-    app.directive('inputField', ['$scope', function($scope) {
+    app.directive('inputField', function() { 
      return {
-            restrict: 'AE',
-            replace: 'true',
-            template: '<div><label for="{{field.inputName}}">{{field.identifierName}}</label><input type="{{field.typeName}}" id="{{field.inputName}}" name="{{field.inputName}}" ng-model="input.{{field.inputName}}" ng-pattern="input.{{field.patternName}}" ng-trim="true" required></div>',
-            link : function(scope, element, attrs) {
-                }
+         restrict: 'E',
+        template: '<div><label for="{{field.inputName}}">{{field.identifierName}}</label><input type="{{field.typeName}}" id="{{field.inputName}}" name="{{field.inputName}}" ng-model="input.{{field.inputName}}" ng-pattern="input.{{field.patternName}}" ng-trim="true" required></div>'
             };
  
-    $scope.fields = [
-                    {"inputName": "firstName", "identifierName": "Vorname", "typeName": "text", "patternName": "word"},
-                    {"inputName": "lastName", "identifierName": "Nachname", "typeName": "text", "patternName": "word"}               
-                    ];
-    }]);
+    
+    });
     
     
     /* 

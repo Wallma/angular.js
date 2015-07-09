@@ -56,6 +56,22 @@
                     alert('Error: Please debug in developer console');
                 });
         };
+        
+        $scope.login = function($scope){
+            $http.post('http://angular.local:3000/users/sign_in', {
+                user: {
+                    email: 'admin@angular.local',
+                    password: 'angularjs'
+                }
+            }).
+            success(function(data, status, headers, config) {
+                console.log(data, status, headers, config);
+
+            }).
+            error(function(data, status, headers, config) {
+                alert('Error: Please debug in developer console');
+            });
+        };
        
     }]);	
 		
