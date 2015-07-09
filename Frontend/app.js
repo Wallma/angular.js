@@ -91,15 +91,13 @@
          restrict: 'E',
          replace: true,
          scope: {
-             inputName: '@',
-             identifierName: '@',
-             typeName: '@',
-             patternName: '@'
+             name: '@',
+             identifier: '@',
+             type: '@',
+             pattern: '@'
          },
         templateUrl: 'input-field.html'
-            };
- 
-    
+      };
     });
     
     
