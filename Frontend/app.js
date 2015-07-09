@@ -80,9 +80,10 @@
                         phoneNumber: '',
                         mobileNumber: '',
                         password: '',
-                        repassword: '',
-                        word: /^\s*[a-zäöüÄÖÜß]*\s*$/i
+                        repassword: ''
                       };
+        
+         $scope.word = '/^\s*[a-zäöüÄÖÜß]*\s*$/i';
         
     }]);
     
@@ -94,7 +95,7 @@
              name: '@',
              identifier: '@',
              type: '@',
-             pattern: '@'
+             pattern: '='
          },
         templateUrl: 'input-field.html'
       };
