@@ -7,9 +7,13 @@
 
 	<body ng-controller="input">
 		<form name="registerForm">
-            <input-field name="firstName" identifier="Vorname" type="text" pattern="word"></input-field>
+            <input-field name="firstName" identifier="Vorname" type="text" pattern="word" ng-model="firstName"></input-field> <br>
+            <span>{{input.firstname}}</span>
+            
             <input-field name="lastName" identifier="Nachname" type="text" pattern="word"></input-field>
+            <input type="submit" value="Übernehmen">
         </form>
+        
     <script type="text/javascript" src="angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
 </body>

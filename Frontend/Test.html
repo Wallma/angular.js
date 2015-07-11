@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="mainModule" ng-strict-di>
+    <head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="default.css" />
+	</head>
+    
+    <body ng-controller="attribute">
+        <div ng-form="Form">
+            <label ng-attr-for="{{name}}">{{name}}</label>
+            <input ng-attr-type="{{type}}" ng-attr-id="{{name}}" ng-attr-name="{{name}}" ng-trim="true" required>
+        </div>
+            
+            
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="Test.js"></script>
+</body>
+</html>

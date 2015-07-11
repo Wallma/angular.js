@@ -66,7 +66,7 @@
     }]);
 
     app.controller('input', ['$scope', function($scope){
-    
+            
     $scope.register = { firstName: '', 
                         lastName: '',
                         userName: '',
@@ -90,12 +90,13 @@
     app.directive('inputField', function() { 
      return {
          restrict: 'E',
-         replace: true,
+         priority: '0',
+         replace: 'true',
          scope: {
              name: '@',
              identifier: '@',
              type: '@',
-             pattern: '='
+             pattern: '=',
          },
         templateUrl: 'input-field.html'
       };

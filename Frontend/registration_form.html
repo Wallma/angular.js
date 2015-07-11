@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="mainModule" ng-strict-di>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="default.css" />
+    </head>
+
+    <body>
+        <!-- Issue: Wie bekommt man das ng-model dazu Werte auzuspucken? :( -> Lösung? https://github.com/angular/angular.js/issues/1924 
+             Beispiel 1 mit einzelnen Feldern die angesprochen und sortiert werden können nach belieben - Dropdowns können hier auch einfach eingepflegt werden. 
+             Auch lassen sich hier bei Zahlen z.B. zusätzlich Max/Min Werte anlegen -->
+        <form name="registrationForm1">
+            <input-repeat-sub-form ng-controller="firstName"></input-repeat-sub-form>
+            <input-repeat-sub-form ng-controller="lastName"></input-repeat-sub-form>
+        </form><br />
+        
+        <!-- Beispiel 2 hier werden die Felder via Repeat angelegt. Die Sortierung erfolgt in der Reihenfolge der Felder des Controllers (Array) -->
+        <form name="registrationForm2" ng-controller="attribute">
+            <input-repeat-sub-form ng-repeat="attribute in attributes"></input-repeat-sub-form>
+        </form>
+
+        <script type="text/javascript" src="angular.min.js"></script>
+        <script type="text/javascript" src="input_app.js"></script>
+    </body>
+</html>

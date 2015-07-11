@@ -1,4 +1,16 @@
-<div>
+<div ng-form="subForm">
     <label for="{{name}}">{{identifier}}</label>
     <input type="{{type}}" id="{{name}}" name="{{name}}" ng-pattern="{{pattern}}" ng-trim="true" required>
+    <i class="icon-valid" ng-show="subForm.{{name}}.$dirty && subForm.{{name}}.$valid">tse</i>
+    <i class="icon-invalid" ng-show="subForm.{{name}}.$dirty && subForm.{{name}}.$invalid">tes</i>
 </div>
+
+
+    <div class="form-group col-sm-6" data-ng-form="subForm" data-ng-repeat="field in justificationInfo.justifications">
+
+        <label for="{{field.label}}"><h3>{{field.label}}</h3></label>
+        <i class="icon-valid" data-ng-show="subForm.input.$dirty && subForm.input.$valid"></i>
+        <i class="icon-invalid" data-ng-show="subForm.input.$dirty && subForm.input.$invalid"></i>
+        <textarea placeholder="{{field.placeholder}}" class="form-control" id="{{field.label}}" name="input" type="text" rows="3" data-ng-model="field.value" required>{{field.value}}</textarea>
+
+    </div>
