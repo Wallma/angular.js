@@ -40,7 +40,7 @@
     app.directive('inputSubForm', function(){ 
      return {
         restrict: 'A',
-        priority: '0',
+        priority: '1',
         replace: 'true',
         scope: true,
         templateUrl: 'input_subform.html'
@@ -52,7 +52,7 @@
     app.directive('inputRepeatSubForm', function(){ 
      return {
         restrict: 'E',
-        priority: '0',
+        priority: '1',
         replace: 'true',
         scope: true,
         templateUrl: 'input_subform.html'

@@ -6,17 +6,25 @@
     </head>
 
     <body>
-        <!-- Issue: Wie bekommt man das ng-model dazu Werte auzuspucken? :( -> Lösung? https://github.com/angular/angular.js/issues/1924 
+        <!-- Issue: Wie bekommt man das ng-model dazu Werte auzuspucken? :( -> Lösung?:
+                http://www.ng-newsletter.com/posts/directives.html
+                https://www.codeschool.com/blog/2015/03/06/digging-advanced-angularjs-directives/
+                https://github.com/angular/angular.js/issues/1924 
+                http://www.chroder.com/2014/02/01/using-ngmodelcontroller-with-custom-directives/
+
              Beispiel 1 mit einzelnen Feldern die angesprochen und sortiert werden können nach belieben - Dropdowns können hier auch einfach eingepflegt werden. 
-             Auch lassen sich hier bei Zahlen z.B. zusätzlich Max/Min Werte anlegen -->
+             Auch lassen sich hier bei Zahlen z.B. zusätzlich Max/Min Werte anlegen alternativ über neues Attribut ohne massig Controller: http://plnkr.co/edit/?p=preview -->
         <form name="registrationForm1">
-            <input-repeat-sub-form ng-controller="firstName"></input-repeat-sub-form>
-            <input-repeat-sub-form ng-controller="lastName"></input-repeat-sub-form>
+            <input-repeat-sub-form ng-controller="firstName" ng-model="$parent.attribute.value" ></input-repeat-sub-form>
+            <span>{{attribute.value}}</span>
+            <input-repeat-sub-form ng-controller="lastName" ng-model="$parent.attribute.value" ></input-repeat-sub-form>
+            <span>{{attribute.value}}</span>
         </form><br />
         
         <!-- Beispiel 2 hier werden die Felder via Repeat angelegt. Die Sortierung erfolgt in der Reihenfolge der Felder des Controllers (Array) -->
         <form name="registrationForm2" ng-controller="attribute">
-            <input-repeat-sub-form ng-repeat="attribute in attributes"></input-repeat-sub-form>
+            <input-repeat-sub-form ng-repeat="attribute in attributes" ng-model="$parent.attribute.value" ></input-repeat-sub-form>
+            <span>{{attribute.value}}</span>
         </form>
 
         <script type="text/javascript" src="angular.min.js"></script>
