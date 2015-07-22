@@ -13,6 +13,13 @@
         $scope.attribute = {name: 'lastName', field: 'Nachname', type: 'text', placeholder: 'Doe', word: '/^\s*[a-zäöüÄÖÜß]*\s*$/i', value: ''};
     }]);
     
+    //Inputfelder via Einzelangabe in einem einzigen Controller:
+    app.controller('registration', ['$scope', function($scope){
+    
+        $scope.firstName = {name: 'firstName', field: 'Vorname', type: 'text', placeholder: 'John', word: '/^\s*[a-zäöüÄÖÜß]*\s*$/i', value: ''};
+        $scope.lastName = {name: 'lastName', field: 'Nachname', type: 'text', placeholder: 'Doe', word: '/^\s*[a-zäöüÄÖÜß]*\s*$/i', value: ''};
+    }]);
+    
     //Inputfelder via Repeat:
     
     app.controller('attribute', ['$scope', function($scope){
@@ -34,6 +41,21 @@
                             {name: 'repassword', field: 'Passwort wiederholen', type: 'password', placeholder: 'password', word: '/^\s*[a-zäöüÄÖÜß]*\s*$/i', value: ''}
                             ];
         }]);
+    
+ 
+    // Direktive als Element mit Feldnamen
+    
+    app.directive('inputSubFormCustom', function(){ 
+     return {
+        restrict: 'E',
+        priority: '1',
+        replace: 'true',
+        scope: {
+          customField: '=fieldname'
+        },
+        templateUrl: 'input_subform_custom.html'
+      };
+    });    
     
     // Direktive als Attribute
     
