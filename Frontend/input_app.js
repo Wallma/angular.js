@@ -39,9 +39,9 @@
      //Inputfelder via Einzelangabe in einem einzigen Controller:
     app.controller('registration', ['$scope', function($scope){
     
-        $scope.firstName = {name: 'firstName', field: 'Vorname', type: 'text', placeholder: 'John', word: '/^\s*[a-zäöüÄÖÜß]*\s*$/i', value: ''};
-        $scope.lastName = {name: 'lastName', field: 'Nachname', type: 'text', placeholder: 'Doe', word: '/^\s*[a-zäöüÄÖÜß]*\s*$/i', value: ''};
-        $scope.test = "l9ol"
+        $scope.firstName = {name: 'firstName', field: 'Vorname', type: 'text', placeholder: 'John', word: /[a-zäöüÄÖÜß\s]*$/i, value: ''};
+        $scope.lastName = {name: 'lastName', field: 'Nachname', type: 'text', placeholder: 'Doe', word: /^\s*[a-zäöüÄÖÜß\s]*$/i, value: ''};
+        
     }]);
     
     
@@ -68,8 +68,7 @@
         priority: '1',
         replace: 'true',
         scope: {
-            customField: '=fieldname',
-            ngModel: '='
+            customField: '=fieldname'
         },
         templateUrl: 'input_subform_custom.html'
       };
