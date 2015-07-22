@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-strict-di>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="default.css" />
+    </head>
+
+    <body>
+        
+    <div ng-app="MyApp" ng-controller="MyCtrl">
+        {{foo.value}}<br />
+        {{foo}}<br />
+        <my-directive fieldname="foo" ng-model="foo.value"></my-directive>
+        {{foo1.value}}<br />
+        {{foo1}}<br />
+        <my-directive fieldname="foo1" ng-model="foo1.value"></my-directive>
+    </div>
+    
+        <script type="text/javascript" src="angular.min.js"></script>
+        <script type="text/javascript" src="nested_test.js"></script>
+    </body>
+</html>
+
+
+<!-- 
+
+<input ng-pattern="customField.word" /> 
+
+-->

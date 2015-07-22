@@ -41,13 +41,14 @@
     
         $scope.firstName = {name: 'firstName', field: 'Vorname', type: 'text', placeholder: 'John', word: '/^\s*[a-zäöüÄÖÜß]*\s*$/i', value: ''};
         $scope.lastName = {name: 'lastName', field: 'Nachname', type: 'text', placeholder: 'Doe', word: '/^\s*[a-zäöüÄÖÜß]*\s*$/i', value: ''};
+        $scope.test = "l9ol"
     }]);
     
     
     
  
     // Direktive als Element mit Feldnamen
-    
+    /*
     app.directive('inputSubFormCustom', function(){ 
      return {
         restrict: 'E',
@@ -59,8 +60,20 @@
         },
         templateUrl: 'input_subform_custom.html'
       };
-    });    
-    
+    });   */
+
+    app.directive('inputSubFormCustom', function(){ 
+     return {
+        restrict: 'E',
+        priority: '1',
+        replace: 'true',
+        scope: {
+            customField: '=fieldname',
+            ngModel: '='
+        },
+        templateUrl: 'input_subform_custom.html'
+      };
+    });
     
     // Direktive als Attribute
     

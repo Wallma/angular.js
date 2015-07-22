@@ -1,8 +1,7 @@
 <div ng-form="subForm">
     <!-- Mit ng-attr- lässt sich eine Variable ohne Probleme bei einem Attribut angeben :) -->
     <label for="{{customField.name}}">{{customField.field}}</label>
-    <input type="{{customField.type}}" id="{{customField.name}}" name="{{customField.name}}" placeholder="{{customField.placeholder}}" ng-pattern="customField.word" ng-trim="true" required ng-model="customField.value" />
+    <input type="{{customField.type}}" id="{{customField.name}}" name="{{customField.name}}" placeholder="{{customField.placeholder}}" required ng-model="customField.value" />
     <i class="icon-valid" ng-show="subForm.{{customField.name}}.$dirty && subForm.{{customField.name}}.$valid"></i>
     <i class="icon-invalid" ng-show="subForm.{{customField.name}}.$dirty && subForm.{{customField.name}}.$invalid"></i>
-    
 </div>
