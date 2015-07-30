@@ -2,40 +2,18 @@
 <html ng-app="mainModule" ng-strict-di>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<link rel="stylesheet" type="text/css" href="default.css" />
+		<link rel="stylesheet" type="text/css" href="source/default.css" />
     </head>
 
     <body>
-        <!-- Issue: Wie bekommt man das ng-model dazu Werte auzuspucken? :( -> Lösung?:
-                http://www.ng-newsletter.com/posts/directives.html
-                https://www.codeschool.com/blog/2015/03/06/digging-advanced-angularjs-directives/
-                https://github.com/angular/angular.js/issues/1924 
-                http://www.chroder.com/2014/02/01/using-ngmodelcontroller-with-custom-directives/
+        
+        <form name="registrationForm3" ng-controller="registration">
+            <input-sub-form-custom field="firstName"></input-sub-form-custom>
+            <input-sub-form-custom field="lastName"></input-sub-form-custom>
 
-             Beispiel 1 mit einzelnen Feldern die angesprochen und sortiert werden können nach belieben - Dropdowns können hier auch einfach eingepflegt werden. 
-             Auch lassen sich hier bei Zahlen z.B. zusätzlich Max/Min Werte anlegen alternativ über neues Attribut ohne massig Controller: http://plnkr.co/edit/?p=preview 
-        <form name="registrationForm1">
-            <input-repeat-sub-form ng-controller="firstName" ng-model="$parent.attribute.value"></input-repeat-sub-form>
-            <span>{{attribute.value}}</span>
-            <input-repeat-sub-form ng-controller="lastName" ng-model="$parent.attribute.value"></input-repeat-sub-form>
-            <span>{{attribute.value}}</span>
-        </form><br />        
-        
-        <!-- Beispiel 2 hier werden die Felder via Repeat angelegt. Die Sortierung erfolgt in der Reihenfolge der Felder des Controllers (Array) 
-        <form name="registrationForm2" ng-controller="attribute">
-            <input-repeat-sub-form ng-repeat="attribute in attributes" ng-model="$parent.attribute.value"></input-repeat-sub-form>
-            <span>{{attribute.value}}</span>
-        </form><br />
-        
-        
-        <!-- Beispiel 3 mit neuem Feld-->
-<form name="registrationForm3" ng-controller="registration">
-    <input-sub-form-custom fieldname="firstName"></input-sub-form-custom>
-    <input-sub-form-custom fieldname="lastName"></input-sub-form-custom>
-    
-</form><br />
+        </form>
 
-        <script type="text/javascript" src="angular.min.js"></script>
-        <script type="text/javascript" src="input_app.js"></script>
+        <script type="text/javascript" src="source/angular.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
     </body>
 </html>
