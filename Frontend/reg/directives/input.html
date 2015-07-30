@@ -1,6 +1,5 @@
 <div>
-    <!-- Mit ng-attr- lässt sich eine Variable ohne Probleme bei einem Attribut angeben :) -->
-    <label for="{{field.name}}">{{field.field}}</label>
+    <label for="{{field.name}}">{{field.label}}</label>
     <input type="{{field.type}}" id="{{field.name}}" name="{{field.name}}" placeholder="{{field.placeholder}}" ng-pattern="field.word" required ng-model="field.value" />
     <i class="icon-valid" ng-show="subForm.{{field.name}}.$dirty && subForm.{{field.name}}.$valid"></i>
     <i class="icon-invalid" ng-show="subForm.{{field.name}}.$dirty && subForm.{{field.name}}.$invalid"></i>

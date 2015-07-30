@@ -1,5 +1,8 @@
 class GendersController < ApplicationController
   before_action :set_gender, only: [:show, :edit, :update, :destroy]
+    
+  before_filter :authenticate_user!, except: :index
+    
 
   # GET /genders
   # GET /genders.json
