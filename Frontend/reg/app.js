@@ -4,16 +4,15 @@
      //Inputfelder via Einzelangabe in einem einzigen Controller:
     app.controller('registration', ['$scope', '$http', function($scope, $http){
         
+        $scope.gender = {name: 'gender', label: 'Anrede', placeholder: 'Anrede', value: '', options: []};
+        
         $http.get('http://angular.local:3000/genders.json').
             success(function(data, status, headers, config) {
-                $scope.genders = data;
+                $scope.gender.options = data;
             }).
             error(function(data, status, headers, config) {
                 alert('Error: Please debug in developer console');
             });
-
-    
-        $scope.gender = {name: 'gender', label: 'Anrede', placeholder: 'Anrede', value: '', options: $scope.genders};
         
         $scope.firstName = {name: 'firstName', label: 'Vorname', type: 'text', placeholder: 'John', word: /[a-zäöüÄÖÜß\s]*/i, value: ''};
         
