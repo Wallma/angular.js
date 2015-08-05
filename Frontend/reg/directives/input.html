@@ -1,6 +1,12 @@
 <div>
     <label for="{{field.name}}">{{field.label}}</label>
-    <input type="{{field.type}}" id="{{field.name}}" name="{{field.name}}" placeholder="{{field.placeholder}}" ng-pattern="field.word" required ng-model="field.value" />
-    <i class="icon-valid" ng-show="subForm.{{field.name}}.$dirty && subForm.{{field.name}}.$valid"></i>
-    <i class="icon-invalid" ng-show="subForm.{{field.name}}.$dirty && subForm.{{field.name}}.$invalid"></i>
+    <input type="{{field.type}}" 
+           id="{{field.name}}" 
+           name="{{field.name}}" 
+           placeholder="{{field.placeholder}}" 
+           ng-pattern="field.word" 
+           required 
+           ng-model="field.value"  /> <!--
+           ng-class="getValidationCSSClass(registrationform.{{field.name}})" />
+    <span ng-show="registrationform.{{field.name}}.$invalid" style="color: red">{{getValidationError(registrationform.{{field.name}})}}</span><br /> -->
 </div>
