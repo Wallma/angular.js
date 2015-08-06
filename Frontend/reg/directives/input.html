@@ -8,5 +8,6 @@
            required 
            ng-model="field.value"  /> 
     
-     <div ng-show="form.{{field.name}}.$dirty && form.{{field.name}}.$invalid">Please enter something</div>
+    <span ng-show="form.{{field.name}}.$dirty && form.{{field.name}}.$error.required">Feld leer</span>
+    <span ng-show="form.{{field.name}}.$dirty && form.{{field.name}}.$error.pattern">Pattern fehlerhaft</span>
 </div>
