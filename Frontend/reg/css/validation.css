@@ -2,13 +2,19 @@
 /* Gültig */
 input.ng-valid.ng-dirty,
 select.ng-valid.ng-dirty {
-  border: solid green 3px;
+  border: 3px solid green;
 }
 
 /* Ungültig */
 input.ng-invalid.ng-dirty,
 select.ng-invalid.ng-dirty {
-  border: solid red 3px;
+  border: 3px solid red;
+}
+
+/* Ungültig required */
+input.ng-invalid.ng-invalid-required.ng-dirty,
+select.ng-invalid.ng-invalid-required.ng-dirty {
+  border: 3px dashed red;
 }
 
 /* Leer 
