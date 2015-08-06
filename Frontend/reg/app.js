@@ -57,7 +57,8 @@
         priority: '1',
         replace: 'true',
         scope: {
-            field: '='
+            field: '=',
+            form: '='
         },
         templateUrl: 'directives/input.html'
       };

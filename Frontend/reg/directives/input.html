@@ -7,4 +7,6 @@
            ng-pattern="field.word" 
            required 
            ng-model="field.value"  /> 
+    
+     <div ng-show="form.{{field.name}}.$dirty && form.{{field.name}}.$invalid">Please enter something</div>
 </div>
