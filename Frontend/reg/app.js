@@ -41,63 +41,11 @@
         $scope.password = {name: 'password', label: 'Passwort', type: 'password', placeholder: 'password', word: /^[a-zäöüÄÖÜß\s]*$/i, value: ''};
         
         $scope.repassword = {name: 'repassword', label: 'Passwort wiederholen', type: 'password', placeholder: 'password', word: /^[a-zäöüÄÖÜß\s]*$/i, value: ''};
-   
-        // Validierung:
-        $scope.getItemState = function (item)
-        {
-          if (item.$valid)
-          {
-            return "valid";
-          }
-          else if (item.$invalid)
-          {
-            return "invalid";
-          }
-          else
-          {
-            return "";
-          }
-        };
-
-        $scope.getItemError = function (item)
-        {
-          if (item.$invalid)
-          {
-            return item.$error;
-          }
-          else
-          {
-            return null;
-          }
-        };
-
-        $scope.getValidationCSSClass = function (item)
-        {
-          // We show an error only if the item has been modified
-          // at least once to avoid displaying errors as soon as
-          // the form is loaded (we wait for the user to interact
-          // with the controls before declaring them invalid).
-          return {
-            invalidItem: item.$invalid && item.$dirty
-          };
-        };
-
-        $scope.getValidationError = function (item)
-        {
-          // We show an error only if the item has been modified
-          // at least once to avoid displaying errors as soon as
-          // the form is loaded (we wait for the user to interact
-          // with the controls before declaring them invalid).
-          if (item.$dirty && item.$error.required)
-          {
-            return "Dieses Feld darf nicht leer sein";
-          }
-          else
-          {
-            return "";
-          }
-        };
         
+        $scope.debug = function(){
+            debugger;
+        };
+       
     }]);
     
     
@@ -127,6 +75,8 @@
         templateUrl: 'directives/dropdown.html'
       };
     });
+    
+    
     
     
 })();

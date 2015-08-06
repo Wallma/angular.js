@@ -9,11 +9,18 @@
     <body>
         
         <form name="registrationform" ng-controller="registration">
+            
             <input-custom field="firstName"></input-custom>
             <input-custom field="lastName"></input-custom>
-            <dropdown-custom field="gender"></dropdown-custom>
-            {{gender.value}}
+            <dropdown-custom field="gender"></dropdown-custom>   
+            
+            <a ng-click="debug()">DEBUGGÖÖR</a>
+            
         </form>
+        
+        
+        
+        
 
         <script type="text/javascript" src="source/angular.min.js"></script>
         <script type="text/javascript" src="app.js"></script>
