@@ -58,7 +58,7 @@
         replace: 'true',
         scope: {
             field: '=',
-            form: '='
+            form: '=registrationform'
         },
         templateUrl: 'directives/input.html'
       };
