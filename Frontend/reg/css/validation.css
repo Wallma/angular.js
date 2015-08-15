@@ -11,15 +11,8 @@ select.ng-invalid.ng-dirty {
   border: 3px solid red;
 }
 
-/* Ungültig required */
+/* Leer */
 input.ng-invalid.ng-invalid-required.ng-dirty,
 select.ng-invalid.ng-invalid-required.ng-dirty {
   border: 3px dashed red;
 }
-
-/* Leer 
-.invalidItem {
-  border: dashed red 2px;
-}
-
-*/
