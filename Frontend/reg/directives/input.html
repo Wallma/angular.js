@@ -1,4 +1,4 @@
-<div ng-form="registrationform">
+<div ng-form="form">
     <label for="{{field.name}}">{{field.label}}</label>
     <input type="{{field.type}}" 
            id="{{field.name}}" 
@@ -8,6 +8,6 @@
            required 
            ng-model="field.value"  /> 
     
-    <span ng-show="registrationform.{{field.name}}.$dirty && registrationform.{{field.name}}.$error.required">Feld leer</span>
-    <span ng-show="registrationform.{{field.name}}.$dirty && registrationform.{{field.name}}.$error.pattern">Pattern fehlerhaft</span>
+    <span ng-show="form.{{field.name}}.$dirty && form.{{field.name}}.$error.required">Feld leer</span>
+    <span ng-show="form.{{field.name}}.$dirty && form.{{field.name}}.$error.pattern">Pattern fehlerhaft</span>
 </div>

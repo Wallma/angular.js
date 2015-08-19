@@ -1,4 +1,4 @@
-<div>
+<div ng-form="form">
     <label for="{{field.name}}">{{field.label}}</label>
     <select id="{{field.name}}" name="{{field.name}}" placeholder="{{field.placeholder}}" required ng-model="field.value" ng-options="option.name for option in field.options">
 </div>
